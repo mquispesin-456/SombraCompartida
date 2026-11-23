@@ -37,14 +37,14 @@
       <div class="table-scroll" role="region" aria-label="Tabla de entregables, desplazable en horizontal" tabindex="0">
         <table>
           <caption>Entregables de UX, accesibilidad y analítica</caption>
-          <thead><tr><th scope="col">Entregable</th><th scope="col">Carpeta</th><th scope="col">Estado</th><th scope="col">Enlace o archivo</th></tr></thead>
+          <thead><tr><th scope="col">Entregable</th><th scope="col">Carpeta</th><th scope="col">Estado</th></tr></thead>
           <tbody>
-            <tr><th scope="row">Lista de fallas (celular y PC)</th><td>00_Control</td><td class="vacio">Por completar</td><td class="vacio">Enlace</td></tr>
-            <tr><th scope="row">Reporte de continuidad</th><td>00_Control</td><td class="vacio">Por completar</td><td class="vacio">Enlace</td></tr>
-            <tr><th scope="row">Textos alternativos de las imágenes</th><td>04_Accesibilidad</td><td class="vacio">Por completar</td><td class="vacio">Enlace</td></tr>
-            <tr><th scope="row">Capturas de contraste y navegación con teclado</th><td>04_Accesibilidad</td><td class="vacio">Por completar</td><td class="vacio">Enlace</td></tr>
-            <tr><th scope="row">Borrador del protocolo para los 5 usuarios (adelanto de la semana 15)</th><td>06_Pruebas_usuarios</td><td class="vacio">Por completar</td><td class="vacio">Enlace</td></tr>
-            <tr><th scope="row">Mi bitácora</th><td>09_Bitacoras_y_Evaluacion</td><td class="vacio">Por completar</td><td class="vacio">Enlace</td></tr>
+            <tr><th scope="row">Lista de fallas (celular y PC)</th><td>00_Control</td><td>Completado</td></tr>
+            <tr><th scope="row">Reporte de continuidad</th><td>00_Control</td><td>Completado</td></tr>
+            <tr><th scope="row">Textos alternativos de las imágenes</th><td>04_Accesibilidad</td><td>Completado</td></tr>
+            <tr><th scope="row">Capturas de contraste y navegación con teclado</th><td>04_Accesibilidad</td><td>Completado</td></tr>
+            <tr><th scope="row">Borrador del protocolo para los 5 usuarios (adelanto de la semana 15)</th><td>06_Pruebas_usuarios</td><td class="vacio">Por completar</td></tr>
+            <tr><th scope="row">Mi bitácora</th><td>09_Bitacoras_y_Evaluacion</td><td>Completado</td></tr>
           </tbody>
         </table>
       </div>
@@ -53,7 +53,10 @@
     <section id="modulo" aria-labelledby="t-mod">
       <div class="section-head"><h2 id="t-mod">Módulo para demostrar</h2>
       <p class="lead">La auditoría de accesibilidad y cómo se priorizaron las fallas.</p></div>
-      <div class="espacio"><p>Explicar aquí cómo se hizo la auditoría y con qué criterio se ordenaron las fallas.</p></div>
+      <div class="espacio">
+        <p>La auditoría de accesibilidad se realizó sobre la página principal (<code>index.html</code>) usando las herramientas del navegador: el informe de accesibilidad de Lighthouse, el selector de color para comprobar el contraste y la vista móvil de 360 píxeles de ancho. También se revisaron la navegación con teclado mediante la tecla <code>Tab</code>, el orden de los títulos, los textos alternativos de las imágenes y los enlaces internos.</p>
+        <p>Las fallas se priorizaron según su impacto real en la lectura y el uso de la página: <b>Alta</b> cuando impiden o dificultan mucho acceder al contenido (por ejemplo, en lectores de pantalla o baja visión, como ocurre con la falta de texto alternativo o el bajo contraste), <b>Media</b> cuando exigen esfuerzo adicional o hacen perder parte de la información sin bloquear el resto de la navegación (como el corte de la tabla en móvil), y <b>Baja</b> cuando solo afectan la apariencia.</p>
+      </div>
     </section>
 
     <section id="detalle" aria-labelledby="t-det">
@@ -61,25 +64,58 @@
 
       <div class="bit-detalle" id="fallas">
         <h3>Lista de fallas (celular y PC)</h3>
-        <p class="small">Ordenar de mayor a menor prioridad. Agregar una fila por cada falla.</p>
-      <div class="table-scroll" role="region" aria-label="Tabla de fallas, desplazable en horizontal" tabindex="0">
-        <table>
-          <caption>Fallas encontradas</caption>
-          <thead><tr><th scope="col">N.º</th><th scope="col">Falla</th><th scope="col">Dispositivo</th><th scope="col">Prioridad</th><th scope="col">Estado</th></tr></thead>
+        <p>Cada falla se buscó con las herramientas del navegador: el informe de accesibilidad (Lighthouse), el selector de color para medir el contraste y el modo celular con 360 píxeles de ancho. Para cada una se anotó dónde ocurre, en qué dispositivo, qué tan grave es, quién la corrige y la captura que la muestra.</p>
+      <div class="table-scroll" role="region" aria-label="Lista de fallas, desplazable en horizontal" tabindex="0">
+        <table class="tabla-excel">
+          <caption>Lista de fallas (celular y PC)</caption>
+          <thead><tr><th scope="col">N.º</th><th scope="col">Falla encontrada</th><th scope="col">Dónde ocurre (página / toma / nodo)</th><th scope="col">Dispositivo</th><th scope="col">Severidad</th><th scope="col">Responsable</th><th scope="col">Fecha límite</th><th scope="col">Estado</th><th scope="col">Captura / evidencia</th></tr></thead>
           <tbody>
-            <tr><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td></tr>
-            <tr><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td></tr>
-            <tr><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td><td class="vacio">Completar</td></tr>
+            <!-- Para agregar una falla, copia una fila <tr> completa y cambia el número.
+            Ejemplo: Landing, sección Créditos | Celular | Media | Arnold | 23/11 | Abierta -->
+            <tr><td>1</td><td>La imagen de la toma 1 no tiene texto alternativo</td><td>Landing, toma 1</td><td>Ambos</td><td>Alta</td><td>Arnold</td><td></td><td>Abierta</td><td><a href="#ev-f01">F01_alt_toma1.png</a></td></tr>
+            <tr><td>2</td><td>Los textos secundarios tienen contraste insuficiente en modo claro</td><td>Landing, textos de apoyo y pies de foto</td><td>Ambos</td><td>Alta</td><td>Neil</td><td></td><td>Abierta</td><td><a href="#ev-f02">F02_contraste.png</a></td></tr>
+            <tr><td>3</td><td>La tabla de créditos se corta y no se puede desplazar</td><td>Landing, sección Créditos</td><td>Celular</td><td>Media</td><td>Arnold</td><td></td><td>Abierta</td><td><a href="#ev-f03">F03_creditos_celular.png</a></td></tr>
+            <tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>5</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
+            <tr><td>6</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr>
           </tbody>
         </table>
       </div>
+        <h4>Evidencias</h4>
+        <div class="evidencias">
+          <figure class="evidencia" id="ev-f01">
+            <h5>F01: imagen sin texto alternativo</h5>
+            <a href="F01_alt_toma1.png"><img src="F01_alt_toma1.png" loading="lazy" alt="Captura del informe de Lighthouse con el aviso de que los elementos de imagen no tienen atributo alt, con la imagen toma1.jpg señalada."></a>
+            <figcaption>Captura con index-prueba.html. Sin texto alternativo, una persona que usa lector de pantalla no sabe qué muestra la imagen. <b>Corrección:</b> agregar el atributo alt con una descripción de la imagen. <a href="F01_alt_toma1.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+          <figure class="evidencia" id="ev-f02">
+            <h5>F02: contraste insuficiente en textos secundarios</h5>
+            <a href="F02_contraste.png"><img src="F02_contraste.png" loading="lazy" alt="Captura que muestra el contraste insuficiente de los textos secundarios en modo claro, con la relación de contraste por debajo del mínimo."></a>
+            <figcaption>Captura con index-prueba.html en modo claro. El gris claro se lee con dificultad sobre el fondo. <b>Corrección:</b> usar el color #4D4361, que tiene una relación de contraste de 8,5 (el mínimo es 4,5). <a href="F02_contraste.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+          <figure class="evidencia" id="ev-f03">
+            <h5>F03: tabla de créditos cortada en celular</h5>
+            <a href="F03_creditos_celular.png"><img src="F03_creditos_celular.png" loading="lazy" alt="Captura de la página en un celular de 360 píxeles de ancho, con la tabla de créditos cortada en el borde derecho."></a>
+            <figcaption>Captura con index-prueba.html a 360 px de ancho. Parte de la tabla queda fuera de la pantalla y no se puede desplazar. <b>Corrección:</b> usar overflow-x: auto en el contenedor de la tabla. <a href="F03_creditos_celular.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+        </div>
         <h4>Criterio de prioridad</h4>
-      <div class="espacio"><p>Escribir aquí el criterio usado para ordenar las fallas.</p></div>
+      <ul class="criterio">
+          <li><b>Alta:</b> impide o dificulta mucho que una persona lea o use la página, por ejemplo quien usa lector de pantalla o tiene baja visión.</li>
+          <li><b>Media:</b> la página se puede usar, pero con esfuerzo o con pérdida de información.</li>
+          <li><b>Baja:</b> afecta solo la apariencia.</li>
+          <li><b>F01 (Alta):</b> sin texto alternativo, la imagen no se describe a quien no la puede ver.</li>
+          <li><b>F02 (Alta):</b> el texto de apoyo es difícil de leer con baja visión o con mucha luz en el celular.</li>
+          <li><b>F03 (Media):</b> en celular se pierde parte de la tabla, pero el resto de la página funciona.</li>
+        </ul>
+        <p><b>Resultado:</b> se registraron 3 fallas, 2 de prioridad alta y 1 de prioridad media. En index.html, la página real, el código ya incluye el texto alternativo, el color con buen contraste y el desplazamiento de la tabla de créditos.</p>
       </div>
 
       <div class="bit-detalle" id="continuidad">
         <h3>Reporte de continuidad</h3>
-      <div class="espacio"><p>Escribir aquí el reporte.</p></div>
+      <div class="espacio"><p><Strong>- Lo que ya funciona:</Strong> el menú lleva bien a las secciones sin enlaces rotos y desde créditos se puede volver al inicio clicando el título de arriba.
+<br><Strong>- Lo que falta:</Strong> todavía no está el enlace del video (dice "En montaje") y quedan por revisar los tramos siguientes (video → interacción, interacción → extensiones y extensiones → créditos).
+<br><Strong>- Pendientes y encargados:</Strong> María Isabel pone el enlace del video, y Neil ve los tramos que faltan y agrega el botón/enlace de "Volver al inicio".</p></div>
       </div>
 
       <div class="bit-detalle" id="alt">
@@ -89,9 +125,9 @@
           <caption>Textos alternativos</caption>
           <thead><tr><th scope="col">Imagen</th><th scope="col">Texto alternativo</th></tr></thead>
           <tbody>
-            <tr><td class="vacio">Completar</td><td class="vacio">Completar</td></tr>
-            <tr><td class="vacio">Completar</td><td class="vacio">Completar</td></tr>
-            <tr><td class="vacio">Completar</td><td class="vacio">Completar</td></tr>
+            <tr><td class="vacio">toma1.jpg</td><td class="vacio">Dos estudiantes sentados en el pasto entre los troncos de los árboles. Uno sostiene una hoja de apuntes y el otro mira sus manos. Junto a ellos hay envolturas y una botella</td></tr>
+            <tr><td class="vacio">C01_contraste_claro_texto_gris.png</td><td class="vacio">Captura de la parte superior de la página con el enlace Saltar al contenido visible y con borde de foco</td></tr>
+            <tr><td class="vacio">T03_teclado_boton.png</td><td class="vacio">Captura del botón Ver la historia con el borde de foco del teclado visible</td></tr>
           </tbody>
         </table>
       </div>
@@ -99,15 +135,112 @@
 
       <div class="bit-detalle" id="capturas">
         <h3>Capturas de contraste y navegación con teclado</h3>
-        <!-- Para agregar una captura:
-        <figure><img src="NOMBRE.png" alt="Descripción de la captura" loading="lazy"><figcaption>Qué muestra la captura.</figcaption></figure>
-        -->
-      <div class="espacio"><p>Insertar aquí las capturas, cada una con su descripción.</p></div>
+        <p>Las pruebas se hicieron en index.html, la página real, con las herramientas del navegador. Se revisó que los textos se puedan leer con claridad y que toda la página se pueda recorrer sin mouse.</p>
+
+        <h4>Contraste</h4>
+        <p>El contraste es la diferencia de brillo entre el texto y su fondo. Se pide una relación mínima de 4,5 para texto normal. Se midió el texto gris de apoyo (el pie de la foto) en modo claro, porque es el color más claro que se usa para texto en la página.</p>
+        <div class="evidencias">
+          <figure class="evidencia" id="ev-c01">
+            <h5>C01: contraste del texto gris en modo claro</h5>
+            <a href="C01_contraste_claro_texto_gris.png"><img src="C01_contraste_claro_texto_gris.png" loading="lazy" alt="Captura de las herramientas del navegador con el selector de color del texto gris de apoyo, que muestra la relación de contraste aprobada."></a>
+            <figcaption>Captura con index.html en modo claro. El texto de apoyo usa el color #4D4361 sobre el fondo #F7F5FB. La relación calculada es 8,5, mayor al mínimo de 4,5. <a href="C01_contraste_claro_texto_gris.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+        </div>
+        <p>Solo se tomó captura del texto gris en modo claro. Los demás colores se calcularon con la fórmula de contraste y no tienen captura:</p>
+        <div class="table-scroll" role="region" aria-label="Relaciones de contraste calculadas, desplazable en horizontal" tabindex="0">
+          <table>
+            <caption>Relaciones de contraste calculadas</caption>
+            <thead><tr><th scope="col">Combinación de colores</th><th scope="col">Modo</th><th scope="col">Relación</th><th scope="col">Mínimo</th><th scope="col">Resultado</th></tr></thead>
+            <tbody>
+            <tr><th scope="row">Texto principal sobre el fondo</th><td>Claro</td><td>15,3</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Texto de apoyo sobre el fondo</th><td>Claro</td><td>8,5</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Texto de apoyo sobre tarjeta blanca</th><td>Claro</td><td>9,2</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Enlaces y títulos morados sobre el fondo</th><td>Claro</td><td>8,6</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Texto blanco sobre botón morado</th><td>Claro</td><td>9,3</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Etiqueta “En montaje”</th><td>Claro</td><td>10,4</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Texto principal sobre el fondo</th><td>Oscuro</td><td>15,7</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Texto de apoyo sobre tarjeta</th><td>Oscuro</td><td>8,5</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Enlaces morados claros sobre el fondo</th><td>Oscuro</td><td>9,0</td><td>4,5</td><td>Cumple</td></tr>
+            <tr><th scope="row">Texto del botón sobre botón morado claro</th><td>Oscuro</td><td>9,0</td><td>4,5</td><td>Cumple</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Navegación con teclado</h4>
+        <p>Algunas personas no pueden usar el mouse y recorren la página con la tecla Tab. Para eso, el foco (el borde que marca dónde está el teclado) debe verse siempre. Se recargó la página y se avanzó solo con Tab, sin usar el mouse.</p>
+        <div class="evidencias">
+          <figure class="evidencia" id="ev-t01">
+            <h5>T01: enlace “Saltar al contenido”</h5>
+            <a href="T01_teclado_saltar.png"><img src="T01_teclado_saltar.png" loading="lazy" alt="Captura de la parte superior de la página con el enlace Saltar al contenido visible y con borde de foco."></a>
+            <figcaption>Al presionar Tab una vez aparece este enlace, que permite ir directo al contenido sin pasar por el menú. <a href="T01_teclado_saltar.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+          <figure class="evidencia" id="ev-t02">
+            <h5>T02: foco en el menú</h5>
+            <a href="T02_teclado_menu.png"><img src="T02_teclado_menu.png" loading="lazy" alt="Captura del menú superior con un enlace que muestra el borde de foco del teclado."></a>
+            <figcaption>Al seguir con Tab, cada enlace del menú muestra un borde visible. <a href="T02_teclado_menu.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+          <figure class="evidencia" id="ev-t03">
+            <h5>T03: foco en un botón</h5>
+            <a href="T03_teclado_boton.png"><img src="T03_teclado_boton.png" loading="lazy" alt="Captura del botón Ver la historia con el borde de foco del teclado visible."></a>
+            <figcaption>El botón “Ver la historia” muestra su borde de foco al llegar a él con Tab. <a href="T03_teclado_boton.png">Ver en tamaño completo</a>.</figcaption>
+          </figure>
+        </div>
+        <p><b>Resultado:</b> no se encontraron fallas de contraste ni de navegación con teclado en la página real. El foco se ve en el enlace de salto, el menú y los botones.</p>
       </div>
 
       <div class="bit-detalle" id="protocolo">
         <h3>Borrador del protocolo para los 5 usuarios (adelanto de la semana 15)</h3>
-      <div class="espacio"><p>Escribir aquí el borrador del protocolo.</p></div>
+        <div class="espacio">
+          <p><b>Objetivo:</b> evaluar la facilidad de uso, claridad del recorrido narrativo y legibilidad de <code>index.html</code> tanto en celular como en computadora antes de la entrega final.</p>
+          <p><b>Participantes y modalidad:</b> 5 usuarios (3 en celular y 2 en computadora), con sesiones individuales de 10 a 15 minutos bajo la técnica de <i>pensar en voz alta</i> (el usuario comenta lo que ve, busca y espera mientras navega).</p>
+        </div>
+
+        <h4>Tareas de prueba</h4>
+        <div class="table-scroll" role="region" aria-label="Tabla de tareas del protocolo de usuarios, desplazable en horizontal" tabindex="0">
+          <table>
+            <caption>Tareas para la prueba con 5 usuarios</caption>
+            <thead>
+              <tr>
+                <th scope="col">N.º</th>
+                <th scope="col">Tarea</th>
+                <th scope="col">Qué se observa</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td><b>Primera impresión:</b> mirar la portada sin hacer clic y explicar de qué trata el proyecto.</td>
+                <td>Claridad del título, texto introductorio y botón principal («Ver la historia»).</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td><b>Acceso al video:</b> ubicar la historia principal e intentar reproducirla.</td>
+                <td>Si se entiende el estado actual («En montaje») y la ficha de datos del video.</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td><b>Recorrido narrativo:</b> avanzar hacia las secciones de interacción y extensiones.</td>
+                <td>Fluidez del menú, enlaces internos y continuidad entre bloques.</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td><b>Lectura de créditos:</b> identificar a los integrantes del equipo y sus roles.</td>
+                <td>Legibilidad y desplazamiento horizontal de la tabla de créditos en celular.</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td><b>Retorno al inicio:</b> volver a la parte superior desde la sección de créditos.</td>
+                <td>Facilidad para encontrar el enlace o botón de regreso al inicio.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h4>Registro de resultados y cierre</h4>
+        <ul class="criterio">
+          <li><b>Métricas por tarea:</b> se anotará si el usuario completó la tarea sin ayuda, con dificultad o si no logró completarla, además de los errores o dudas expresadas en voz alta.</li>
+          <li><b>Preguntas finales:</b> (1) ¿Qué parte te resultó más clara o interesante?, (2) ¿Tuviste problemas para leer algún texto o usar algún botón en tu pantalla?, (3) ¿Qué cambiarías para que se entienda mejor?</li>
+        </ul>
       </div>
     </section>
 
@@ -115,15 +248,6 @@
       <div class="section-head"><h2 id="t-registro">Registro de actividades</h2>
       <p class="lead">Lo que hice, con fecha y resultado.</p></div>
       <ul class="bit-list">
-            <!-- Para agregar una entrada, copia el bloque <li> de abajo y cambia los datos.
-            <li>
-              <time datetime="AAAA-MM-DD">DD mes AAAA</time>
-              <div>
-                <p>Qué hice.</p>
-                <p class="res"><b>Resultado:</b> qué quedó hecho.</p>
-              </div>
-            </li>
-            -->
             <li>
               <time datetime="2026-11-22">22 nov 2026</time>
               <div>
@@ -164,6 +288,27 @@
               <div>
                 <p>Separé las bitácoras en una página por integrante y preparé en la mía los espacios para cada entregable.</p>
                 <p class="res"><b>Resultado:</b> cada integrante edita solo su archivo, lo que evita conflictos al subir cambios a Git.</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-11-22">22 nov 2026</time>
+              <div>
+                <p>Creé una copia de prueba del landing (index-prueba.html y style-prueba.css) con 3 fallas introducidas a propósito: texto alternativo, contraste y tabla de créditos en celular.</p>
+                <p class="res"><b>Resultado:</b> lista de fallas para practicar la auditoría. La página real quedó sin cambios.</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-11-22">22 nov 2026</time>
+              <div>
+                <p>Tomé las capturas de contraste y de navegación con teclado en la página real: una de contraste del texto gris (C01) y tres de teclado (T01 a T03), y redacté su descripción.</p>
+                <p class="res"><b>Resultado:</b> apartado completo. No se encontraron fallas de contraste ni de teclado.</p>
+              </div>
+            </li>
+            <li>
+              <time datetime="2026-11-22">22 nov 2026</time>
+              <div>
+                <p>Completé la lista de fallas con las 3 fallas de la copia de prueba, sus capturas, el criterio de prioridad y la corrección de cada una.</p>
+                <p class="res"><b>Resultado:</b> lista de fallas completa, con 2 fallas de prioridad alta y 1 de prioridad media.</p>
               </div>
             </li>
       </ul>
